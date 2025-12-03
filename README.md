@@ -34,7 +34,7 @@ npm run dev
 - **Component Architecture**: Reusable components for loading, errors, and UI patterns
 - **Client-Side Routing**: Uses Next.js App Router with client components for interactivity
 - **React Query**: Used for data fetching, caching, and state management
-- **TypeScript**: Full type safety throughout the application
+- **TypeScript**: Full type safety throughout the application.
 
 ## Architecture Overview
 
