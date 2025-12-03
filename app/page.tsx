@@ -62,25 +62,27 @@ export default function HomePage() {
 
         {/* Stats Section */}
         {!isLoading && !error && todos && todos.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10">
-            <StatsCard label="Total Tasks" value={totalCount} gradient="purple" />
-            <StatsCard label="Completed" value={<span className="text-green-400">{completedCount}</span>} gradient="green" />
-            <StatsCard label="Remaining" value={<span className="text-blue-400">{totalCount - completedCount}</span>} gradient="blue" />
-          </div>
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mb-8 sm:mb-10">
+              <StatsCard label="Total Tasks" value={totalCount} gradient="purple"/>
+              <StatsCard label="Completed" value={<span className="text-green-400">{completedCount}</span>}
+                         gradient="green"/>
+              <StatsCard label="Remaining" value={<span className="text-blue-400">{totalCount - completedCount}</span>}
+                         gradient="blue"/>
+            </div>
         )}
 
-        {/* Progress Bar */}
-        {!isLoading && !error && todos && todos.length > 0 && (
+      {/* Progress Bar */}
+      {!isLoading && !error && todos && todos.length > 0 && (
           <div className="mb-8 sm:mb-10">
-            <ProgressBar percentage={progressPercentage} />
+            <ProgressBar percentage={progressPercentage}/>
           </div>
-        )}
+      )}
 
-        {/* Loading State */}
-        {isLoading && <LoadingSpinner message="Loading your todos..." size="md" fullPage />}
+      {/* Loading State */}
+      {isLoading && <LoadingSpinner message="Loading your todos..." size="md" fullPage/>}
 
-        {/* Error State */}
-        {error && (
+      {/* Error State */}
+      {error && (
           <ErrorDisplay
             title="Error loading todos"
             message={error.message}

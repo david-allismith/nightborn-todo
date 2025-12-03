@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
     title: "Nightborn Todo",
-    description: "Todo exercise",
+    description: "A Nightborn Todo exercise",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

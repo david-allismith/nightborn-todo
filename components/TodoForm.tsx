@@ -21,10 +21,15 @@ export default function TodoForm({
   const [completed, setCompleted] = useState(initial.completed || false);
   const [titleError, setTitleError] = useState<string>('');
 
+  const isDirty =
+      title !== (initial.title || '') ||
+      description !== (initial.description || '') ||
+      completed !== (initial.completed || false);
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Validate title
+    // Validate title: required and must meet minimum length
     const trimmedTitle = title.trim();
     if (!trimmedTitle) {
       setTitleError('Title is required');
@@ -37,6 +42,8 @@ export default function TodoForm({
     }
 
     setTitleError('');
+
+    // Submit cleaned data to parent handler once validation passes
     onSubmit({
       title: trimmedTitle,
       description: description.trim() || undefined,
@@ -66,6 +73,8 @@ export default function TodoForm({
             value={title}
             onChange={(e) => {
               setTitle(e.target.value);
+
+              // Clear error message as the user corrects the title
               if (titleError) setTitleError('');
             }}
             placeholder="Enter a descriptive title for your todo"
@@ -161,7 +170,7 @@ export default function TodoForm({
       {/* Submit Button */}
       <button
         type="submit"
-        disabled={isLoading}
+        disabled={isLoading || !isDirty}
         className="group w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold px-8 py-5 rounded-2xl shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70 focus:outline-none focus:ring-4 focus:ring-purple-500/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] text-lg"
       >
         {isLoading ? (
