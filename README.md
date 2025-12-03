@@ -10,7 +10,7 @@ A modern, mini full-stack todo application built with Next.js, React Query, and 
 - **Add tasks**: Users can add new tasks to their list
 - **Mark as completed**: Tasks can be marked as completed by checking a box
 - **Delete tasks**: Tasks can be removed from the list
-- **Edit tasks**: Users can edit existing tasks
+- **Edit tasks**: Users can edit existing tasks.
 - **Statistics**: The application displays the number of completed tasks and the percentage of completion
 
 ## Setup Instructions
