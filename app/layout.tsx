@@ -6,6 +6,9 @@ import { ReactNode } from 'react';
 export const metadata: Metadata = {
     title: "Nightborn Todo",
     description: "A Nightborn Todo exercise",
+    icons: {
+        icon: "/favicon.png",
+    },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
