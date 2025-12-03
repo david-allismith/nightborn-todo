@@ -88,6 +88,16 @@ React Query handles a lot of repetitive and tricky tasks automatically.
 **Background fetching & stale data management** – It can refetch data in the background to keep it fresh without manual coding.
 **Built-in error and loading state handling** – Makes it easy to show loading spinners, error messages, and retry failed requests without extra code.
 
+### Q9. Component Design What is the difference between a "controlled" and "uncontrolled" component in React? Which approach did you use for your TODO form and why?
+
+A controlled component is a form element (like <input>, <textarea>, <select>) whose value is controlled by React state. Every change in the input triggers a state update.
+
+An uncontrolled component relies on the DOM to manage its own state. You access the value using a ref when needed.
+
+I used controlled because I want real-time validation (e.g., no empty title).
+This ensures the UI always reflects the state, and the state always reflects the UI.
+Keeps the component state consistent and predictable, which is important when the app grows.
+
 ## Server-Side vs Client-Side Rendering
 
 ### Q10. SSR vs CSR Explain the difference between Server-Side Rendering (SSR) and Client-Side Rendering (CSR). What are the advantages and disadvantages of each approach?
